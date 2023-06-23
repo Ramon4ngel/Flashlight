@@ -23,6 +23,8 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ElevatedButton
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.IconButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -225,7 +227,7 @@ private fun FlashOnOff(
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally) {
 
-            Button(onClick = {
+            IconButton(onClick = {
                 //state.value=!state.value
                 if (state.value) {
                     //TODO: camera flash on
@@ -237,18 +239,16 @@ private fun FlashOnOff(
                 }
                 state.value=!state.value
 
-            }, modifier = Modifier.size(150.dp),colors= ButtonDefaults.buttonColors(Gray50_500), shape = CircleShape,) {
+            }, modifier = Modifier.size(150.dp)) {
                 if(state.value){
-                    Text(text = "ON", color = Color.White
-                        , fontSize = 25.sp, fontWeight = FontWeight.Bold )
                     Icon(painter = painterResource(id = R.drawable.ic_power_24),
                          contentDescription = "Power",
+                        modifier = Modifier.size(150.dp),
                          tint= Color.White)
                 }else{
-                    Text(text = "OFF", color = Color.Black
-                        , fontSize = 25.sp, fontWeight = FontWeight.Bold )
                     Icon(painter = painterResource(id = R.drawable.ic_power_24),
                         contentDescription = "Power",
+                        modifier = Modifier.size(150.dp),
                         tint= Color.Black)
                 }
             }
