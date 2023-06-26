@@ -230,12 +230,12 @@ private fun FlashOnOff(
             IconButton(onClick = {
                 //state.value=!state.value
                 if (state.value) {
-                    //TODO: camera flash on
-                    mCameraImpl!!.toggleFlashlight()
+                    //camera flash on
+                    mCameraImpl.toggleFlashlight()
 
                 } else {
-                    //TODO: camera flash off
-                    mCameraImpl!!.toggleFlashlight()
+                    //camera flash off
+                    mCameraImpl.toggleFlashlight()
                 }
                 state.value=!state.value
 
@@ -282,7 +282,7 @@ fun DefaultPreview() {
                 mCameraImpl!!.onCameraNotAvailable()
             }
         })
-        mCameraImpl?.let { FlashOnOff(modifier = Modifier.fillMaxSize(), it) }
+        mCameraImpl.let { FlashOnOff(modifier = Modifier.fillMaxSize(), it) }
         //Default Preview fail with: java.lang.AssertionError: Unsupported Service: camera
 
     }
@@ -306,7 +306,7 @@ fun MyAppPreview() {
                 mCameraImpl!!.onCameraNotAvailable()
             }
         })
-        mCameraImpl?.let { MyApp(modifier = Modifier.fillMaxSize(), it) }
+        mCameraImpl.let { MyApp(modifier = Modifier.fillMaxSize(), it) }
         //Default Preview fail with: java.lang.AssertionError: Unsupported Service: camera
     }
 }
